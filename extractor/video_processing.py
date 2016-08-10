@@ -12,6 +12,11 @@ def get_duration_of_video(video_filename):
 
 
 def build_ffmpeg_command_to_extract_frame(second, video_filename, counter):
+    """ Builds the required ffmpeg command to extract a frame from a video.
+
+    The command to build is used to extract a frame from a video, from the given time.
+    The resulting frame will be stored under static/images/out<>.png.
+    """
     command_template = 'ffmpeg -i %s -ss 00:00:%s.32 -vframes 1 %s/static/images/out%s.png'
 
     return command_template % (video_filename, second, APP_ROOT, counter)
