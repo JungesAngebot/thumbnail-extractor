@@ -5,6 +5,12 @@ from flask import Flask
 from extractor import APP_ROOT, frontend
 
 
+""" Configuration module for bootstrapping the application.
+
+This module creates the flask instance and configures the system environment.
+"""
+
+
 def create_app():
     app = Flask(__name__, static_folder=APP_ROOT + '/static', static_url_path='/static',
                 template_folder=APP_ROOT + '/templates')
