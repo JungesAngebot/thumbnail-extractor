@@ -9,5 +9,6 @@ class AnalysisController(object):
 
     @staticmethod
     def analyze_video():
+        """ Starts the analysis of the given (static) video. """
         video_filename = '%s/static/videos/sample_summer.mp4' % APP_ROOT
 
