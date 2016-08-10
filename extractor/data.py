@@ -11,6 +11,7 @@ class Image(object):
         a new instance.
         """
         self.image_name = image_name
+        self.static_url_ref = static_url_ref
 
     @classmethod
     def create_with_image_name(cls, image_name, static_url_ref):
