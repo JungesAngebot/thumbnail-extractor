@@ -1,0 +1,6 @@
+moviepy
+colorthief
+oauth2client
+Flask
+Flask-Script
+pymongo
