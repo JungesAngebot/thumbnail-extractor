@@ -22,9 +22,13 @@ class Image(object):
         self.landmarks = []
 
     def image_stream(self):
+        """ Opens the image file for byte read access. """
         return open(self.image_name, 'rb')
 
     def set_face_detection_result(self, result):
+        """ Sets the face detection results from google vision and
+        parses the dictionary containing the results.
+        """
         for landmark in result[0]['landmarks']:
             self.landmarks.append(Landmark.create_from_dict(landmark))
         self._parse_likelihoods(result)
