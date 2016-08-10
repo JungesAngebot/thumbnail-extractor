@@ -15,5 +15,5 @@ class AnalysisController(object):
         video_filename = '%s/static/videos/sample_summer.mp4' % APP_ROOT
         images = extract_frames_from_video(video_filename)
         determine_dominant_color_for_images(images)
-
+        return images
 
