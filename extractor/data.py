@@ -51,7 +51,12 @@ class Image(object):
 
 
 class Landmark(object):
+    """ Represents a landmark object out of the google vision face detection result.
+
+    A landmark consists of a type and 3D coordinates.
+    """
     def __init__(self, landmark_type, x, y, z):
+        """ Initializer just sets the given parameters of a landmark. """
         self.landmark_type = landmark_type
         self.x = x
         self.y = y
@@ -59,6 +64,7 @@ class Landmark(object):
 
     @classmethod
     def create_from_dict(cls, landmark_dict):
+        """ Creates the instance from a dictionary. """
         return cls(landmark_dict['type'],
                    landmark_dict['position']['x'],
                    landmark_dict['position']['y'],
