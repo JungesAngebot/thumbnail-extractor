@@ -1,6 +1,7 @@
 
 
 """ Basic controller layer for hooking up the analyzis functionality. """
+from extractor import APP_ROOT
 
 
 class AnalysisController(object):
@@ -8,5 +9,5 @@ class AnalysisController(object):
 
     @staticmethod
     def analyze_video():
-        pass
+        video_filename = '%s/static/videos/sample_summer.mp4' % APP_ROOT
 
