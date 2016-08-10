@@ -45,6 +45,12 @@ def get_vision_service():
                            discoveryServiceUrl=DISCOVERY_URL)
 
 
+def run_face_detection(images):
+    for image in images:
+        result = detect_face(image.image_stream())
+        image.face_detection = result
+
+
 def detect_face(face_file, max_results=4):
     """Uses the Vision API to detect faces in the given file.
     Args:
