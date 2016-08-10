@@ -7,10 +7,8 @@
                 <div class="owl-carousel owl-theme">
                 {% for image in images %}
                     <div class="item">
-                        <img src="{{ url_for('static', filename='images/' + image['name']) }}" width="300">
+                        <img src="{{ url_for('static', filename='images/' + image.image_name) }}" width="300">
                         <ul>
-                            <li>Dominant Color: {{ image['dominant_color'] }}</li>
-                            <li>Dominant Color: {{ image['metadata'] }}</li>
                         </ul>
                     </div>
                 {% endfor %}
