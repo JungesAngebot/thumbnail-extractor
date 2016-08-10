@@ -4,7 +4,9 @@
 
 
 class Image(object):
-
+    """ Image model to represent basic information
+    about a single image.
+    """
     def __init__(self, image_name):
         self.image_name = image_name
 
