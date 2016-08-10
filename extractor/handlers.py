@@ -5,6 +5,9 @@ from extractor.controller import AnalysisController
 from extractor.system_utils import clean_env
 
 
+""" Handlers for processing incoming requests. """
+
+
 @frontend.route('/')
 def show_index_page():
     """ Hook to begin video file processing.
