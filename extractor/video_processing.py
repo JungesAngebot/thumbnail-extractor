@@ -22,6 +22,9 @@ def extract_frames_from_video(video_filename):
         raise FileNotFoundError('Cannot find file %s.' % video_filename)
     image_names = []
     second = 0
-    for i in range(get_duration_of_video(video_filename)):
+    video_duration = get_duration_of_video(video_filename)
+    for i in range(video_duration):
         os.system(build_ffmpeg_command_to_extract_frame(second, video_filename, i))
+        if second >= video_duration or second >= 60:
+            break
     return image_names
