@@ -27,4 +27,5 @@ def extract_frames_from_video(video_filename):
         os.system(build_ffmpeg_command_to_extract_frame(second, video_filename, i))
         if second >= video_duration or second >= 60:
             break
+        image_names.append('%s/static/images/out%s.png' % (APP_ROOT, i))
     return image_names
