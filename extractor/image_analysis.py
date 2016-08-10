@@ -34,6 +34,12 @@ def determine_dominant_color_for_images(images):
 
 
 def get_vision_service():
+    """ Authenticates to the google vision api.
+
+    If the google authentication env variable is set to a specific service account file
+    this will be uses internally by the google cloud sdk. Otherwise this
+    code must be run in the google compute env.
+    """
     credentials = GoogleCredentials.get_application_default()
     return discovery.build('vision', 'v1', credentials=credentials,
                            discoveryServiceUrl=DISCOVERY_URL)
