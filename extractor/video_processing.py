@@ -5,6 +5,13 @@ from moviepy.video.io.VideoFileClip import VideoFileClip
 from extractor import APP_ROOT
 
 
+""" Module for basic image processing.
+
+The only tasks of this module is to get some basic information about the given video
+like duration and some frames extracted with ffmpeg.
+"""
+
+
 def get_duration_of_video(video_filename):
     """ Returns the duration for the given video file. """
     clip = VideoFileClip(video_filename)
