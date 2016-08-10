@@ -8,6 +8,9 @@ class Image(object):
     about a single image.
     """
     def __init__(self, image_name):
+        """ Initializer takes just the image name to initialize
+        a new instance.
+        """
         self.image_name = image_name
 
     @classmethod
