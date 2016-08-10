@@ -18,15 +18,24 @@ def get_vision_service():
                            discoveryServiceUrl=DISCOVERY_URL)
 
 
+def duration_of_video():
+    clip = VideoFileClip('sample_summer.mp4')
+    return int(clip.duration)
+
+
+def analyze_video(generate_thumbnails):
+    pass
+
+
 def extract_frames():
     second = 0
     image_names = []
-    for i in range(18):
-        second += 2
-        command = 'ffmpeg -i malte_running.mp4 -ss 00:00:%s.32 -vframes 1 %s/static/images/out%s.png' % (
+    for i in range(duration_of_video()):
+        command = 'ffmpeg -i sample_summer.mp4 -ss 00:00:%s.32 -vframes 1 %s/static/images/out%s.png' % (
             second, APP_ROOT, i)
         os.system(command)
-        if second >= 18:
+        second += 10
+        if second >= duration_of_video() or second >= 60:
             break
         image_names.append({
             'name': 'out%s.png' % i,
@@ -83,4 +92,4 @@ def detect_face(face_file, max_results=4):
     })
     response = request.execute()
 
-    return response['responses'][0]['faceAnnotations']
+    return response['responses'][0]['faceAnnotations'] if 'faceAnnotations' in response['responses'][0] else None
