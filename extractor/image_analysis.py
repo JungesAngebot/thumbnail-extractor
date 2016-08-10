@@ -48,7 +48,7 @@ def get_vision_service():
 def run_face_detection(images):
     for image in images:
         result = detect_face(image.image_stream())
-        image.face_detection = result
+        image.set_face_detection_result(result)
 
 
 def detect_face(face_file, max_results=4):
