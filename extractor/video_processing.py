@@ -47,5 +47,5 @@ def extract_frames_from_video(video_filename):
         second += 20
         if second >= video_duration or second >= 60:
             break
-        image_names.append(Image.create_with_image_name('%s/static/images/out%s.png' % (APP_ROOT, i)))
+        image_names.append(Image.create_with_image_name('%s/static/images/out%s.png' % (APP_ROOT, i), 'out%s.png' % i))
     return image_names

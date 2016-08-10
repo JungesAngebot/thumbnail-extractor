@@ -6,13 +6,13 @@ class Image(object):
     about a single image.
     """
 
-    def __init__(self, image_name):
+    def __init__(self, image_name, static_url_ref):
         """ Initializer takes just the image name to initialize
         a new instance.
         """
         self.image_name = image_name
 
     @classmethod
-    def create_with_image_name(cls, image_name):
+    def create_with_image_name(cls, image_name, static_url_ref):
         """ Creates an instance of the image class based on a file name"""
-        return cls(image_name)
+        return cls(image_name, static_url_ref)
