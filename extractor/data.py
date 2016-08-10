@@ -12,4 +12,5 @@ class Image(object):
 
     @classmethod
     def create_with_image_name(cls, image_name):
+        """ Creates an instance of the image class based on a file name"""
         return cls(image_name)
