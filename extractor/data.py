@@ -7,6 +7,12 @@ class Video(object):
     def __init__(self, clip):
         self.clip = clip
 
+    def duration(self):
+        return self.clip.duration
+
+    def fps(self):
+        return self.clip.fps
+
     @classmethod
     def create_from_video_filename(cls, video_filename):
         if not os.path.isfile(video_filename):
