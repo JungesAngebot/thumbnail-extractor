@@ -44,6 +44,7 @@ def extract_frames_from_video(video_filename):
     video_duration = get_duration_of_video(video_filename)
     for i in range(video_duration):
         os.system(build_ffmpeg_command_to_extract_frame(second, video_filename, i))
+        second += 20
         if second >= video_duration or second >= 60:
             break
         image_names.append(Image.create_with_image_name('%s/static/images/out%s.png' % (APP_ROOT, i)))
