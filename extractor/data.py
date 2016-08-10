@@ -1,5 +1,3 @@
-
-
 """ Simple module for representing data to be rendered. """
 
 
@@ -7,6 +5,7 @@ class Image(object):
     """ Image model to represent basic information
     about a single image.
     """
+
     def __init__(self, image_name):
         """ Initializer takes just the image name to initialize
         a new instance.
