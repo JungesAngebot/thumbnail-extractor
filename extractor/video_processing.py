@@ -4,6 +4,7 @@ from moviepy.video.io.VideoFileClip import VideoFileClip
 
 
 def get_duration_of_video(video_filename):
+    """ Returns the duration for the given video file. """
     clip = VideoFileClip(video_filename)
     return int(clip.duration)
 
