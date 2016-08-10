@@ -9,6 +9,7 @@
                     <div class="item">
                         <img src="{{ url_for('static', filename='images/' + image.static_url_ref) }}" width="300">
                         <ul>
+                            <li>Dominant color: {{ image.dominant_color }}</li>
                         </ul>
                     </div>
                 {% endfor %}
