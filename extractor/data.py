@@ -13,6 +13,9 @@ class Image(object):
         self.image_name = image_name
         self.static_url_ref = static_url_ref
 
+    def image_stream(self):
+        return open(self.image_name, 'rb')
+
     @classmethod
     def create_with_image_name(cls, image_name, static_url_ref):
         """ Creates an instance of the image class based on a file name"""
