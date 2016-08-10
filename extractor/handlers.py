@@ -1,7 +1,7 @@
 import glob
 import os
 
-from flask import render_template, request
+from flask import render_template
 
 from extractor import frontend, APP_ROOT
 
