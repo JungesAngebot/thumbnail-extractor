@@ -12,5 +12,5 @@ class AnalysisController(object):
     def analyze_video():
         """ Starts the analysis of the given (static) video. """
         video_filename = '%s/static/videos/sample_summer.mp4' % APP_ROOT
-        extract_frames_from_video(video_filename)
+        images = extract_frames_from_video(video_filename)
 
