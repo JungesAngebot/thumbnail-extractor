@@ -46,6 +46,9 @@ def get_vision_service():
 
 
 def run_face_detection(images):
+    """ Runs the face detection with google vision for each
+    given image.
+    """
     for image in images:
         result = detect_face(image.image_stream())
         image.set_face_detection_result(result)
