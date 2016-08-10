@@ -16,5 +16,5 @@ def show_index_page():
     will be removed.
     """
     clean_env()
-    analysis_data = AnalysisController.analyze_video()
-    return render_template('index.html', analysis_data=analysis_data)
+    images = AnalysisController.analyze_video()
+    return render_template('index.html', images=images)
