@@ -29,11 +29,12 @@ class Image(object):
         """ Sets the face detection results from google vision and
         parses the dictionary containing the results.
         """
-        for landmark in result[0]['landmarks']:
-            self.landmarks.append(Landmark.create_from_dict(landmark))
-        self._parse_likelihoods(result)
-        self.detection_confidence = result[0]['detectionConfidence'] if 'detectionConfidence' in result[
-            0] else 'undefined'
+        if result is not None:
+            for landmark in result[0]['landmarks']:
+                self.landmarks.append(Landmark.create_from_dict(landmark))
+            self._parse_likelihoods(result)
+            self.detection_confidence = result[0]['detectionConfidence'] if 'detectionConfidence' in result[
+                0] else 'undefined'
 
     def _parse_likelihoods(self, result):
         self.surprise_likelihood = result[0]['surpriseLikelihood'] if 'surpriseLikelihood' in result[0] else 'undefined'
