@@ -23,5 +23,5 @@ def extract_frames_from_video(video_filename):
     image_names = []
     second = 0
     for i in range(get_duration_of_video(video_filename)):
-        pass
+        os.system(build_ffmpeg_command_to_extract_frame(second, video_filename, i))
     return image_names
