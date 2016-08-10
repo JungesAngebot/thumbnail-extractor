@@ -31,7 +31,8 @@ def extract_frames():
         image_names.append({
             'name': 'out%s.png' % i,
             'dominant_color': get_dominant_color('out%s.png' % i),
-            'metadata': execute_kaltura_request(get_category_metadata_api_string('40293212'))
+            'metadata': execute_kaltura_request(get_category_metadata_api_string('40293212')),
+            'face_detection': detect_face(open('%s/static/images/out%s.png' % (APP_ROOT, i), 'rb'))
 
         })
     return image_names
