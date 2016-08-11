@@ -2,6 +2,7 @@ import glob
 import os
 
 from extractor import APP_ROOT
+from extractor.data import Video
 
 """ Commons utils to work with the system. """
 
@@ -27,5 +28,5 @@ def get_all_videos():
     files = glob.glob('%s/static/videos/*' % APP_ROOT)
     videos = []
     for file in files:
-        videos.append(file)
+        videos.append(Video.create_from_filename(file))
     return videos
