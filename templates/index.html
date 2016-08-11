@@ -4,21 +4,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <div class="owl-carousel owl-theme">
-                    {% for image in images %}
-                        <div class="item">
-                            <div class="thumbnail">
-                                <img src="{{ url_for('static', filename='images/' + image.static_url_ref) }}"
-                                     width="300">
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <strong>Dominant color:</strong> {{ image.dominant_color }}
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
+
             </div>
         </div>
     </div>
