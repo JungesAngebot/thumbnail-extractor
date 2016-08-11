@@ -20,3 +20,12 @@ def get_all_thumbnails():
     for file in files:
         images.append(file.replace('%s/static/images/' % APP_ROOT, ''))
     return images
+
+
+def get_all_videos():
+    """ Gets all videos in the static dir. """
+    files = glob.glob('%s/static/videos/*' % APP_ROOT)
+    videos = []
+    for file in files:
+        videos.append(file)
+    return videos
