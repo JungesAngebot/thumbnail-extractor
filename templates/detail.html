@@ -2,10 +2,16 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-2">
             <div class="thumbnail">
                 <img src="{{ url_for('static', filename='images/' + image.static_url_ref) }}" width="300">
             </div>
+        </div>
+        <div class="col-lg-4">
+            Here comes the detail
+        </div>
+        <div class="col-lg-4">
+            Here comes the face detection
         </div>
     </div>
 </div>
