@@ -21,6 +21,9 @@ class Image(object):
         self.static_url_ref = static_url_ref
         self.landmarks = []
 
+    def _determine_basic_image_attribs(self):
+        pass
+
     def image_stream(self):
         """ Opens the image file for byte read access. """
         return open(self.image_name, 'rb')
