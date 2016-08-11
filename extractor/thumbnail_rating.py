@@ -6,7 +6,9 @@ def determine_best(images):
     """
     candidate = None
     for image in images:
-        pass
+        is_friendly_image = has_image_joy_likelihook(image) or has_image_surprise_likelihood(image)
+        is_candidate = has_image_faces(image) and is_friendly_image and is_dominant_color_normal(image)
+        candidate = image if is_candidate else None
     return candidate
 
 
