@@ -14,6 +14,7 @@
       <ul class="nav navbar-nav">
         <li {% if page == 'index' %} class="active" {% endif %}><a href="{{ url_for('frontend.show_index_page') }}">Video Processing</a></li>
         <li {% if page == 'overview' %} class="active" {% endif %}><a href="{{ url_for('frontend.show_thumbnails') }}">Thumbnail Overview</a></li>
+        <li {% if page == 'useful-thumbs' %} class="active" {% endif %}><a href="{{ url_for('frontend.show_thumbnails') }}">Detect useful thumbs</a></li>
       </ul>
     </div>
   </div>
