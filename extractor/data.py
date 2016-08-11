@@ -98,4 +98,4 @@ class Video(object):
     @classmethod
     def create_from_filename(cls, filename):
         """ Creates a video instance out of a filename. """
-        return cls(filename, filename.replace('%s/static/videos/' % APP_ROOT))
+        return cls(filename, filename.replace('%s/static/videos/' % APP_ROOT, ''))
