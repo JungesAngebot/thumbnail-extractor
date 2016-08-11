@@ -5,5 +5,22 @@ def determine_best(images):
     and checks that the dominant color is not to dark or to bright.
     """
     candidate = None
-
+    for image in images:
+        pass
     return candidate
+
+
+def has_image_faces(image):
+    pass
+
+
+def has_image_joy_likelihook(image):
+    pass
+
+
+def has_image_surprise_likelihood(image):
+    pass
+
+
+def is_dominant_color_normal(image):
+    pass
