@@ -1,18 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-2">
-            <div class="thumbnail">
-                <img src="{{ url_for('static', filename='images/' + image.static_url_ref) }}" width="300">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="thumbnail">
+                    <img src="{{ url_for('static', filename='images/' + image.static_url_ref) }}" width="300">
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">Image Size</h4>
+                        <p class="list-group-item-text">
+                            <strong>Width of the image is:</strong> {{ image.image_width }} <br>
+                            <strong>Height of the image is:</strong> {{ image.image_height }}
+                        </p>
+                    </a>
+                     <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">Image Mode</h4>
+                        <p class="list-group-item-text">
+                            <strong>Width of the image is:</strong> {{ image.image_mode }}
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                Here comes the face detection
             </div>
         </div>
-        <div class="col-lg-4">
-            Here comes the detail
-        </div>
-        <div class="col-lg-4">
-            Here comes the face detection
-        </div>
     </div>
-</div>
 {% endblock %}

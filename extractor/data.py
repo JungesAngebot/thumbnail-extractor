@@ -23,11 +23,13 @@ class Image(object):
         self.landmarks = []
         self.image_width = None
         self.image_height = None
+        self.image_mode = None
         self._determine_basic_image_attribs()
 
     def _determine_basic_image_attribs(self):
         with pilimage.open(self.image_name) as img:
             self.image_width, self.image_height = img.size
+            self.image_mode = img.mode
 
     def image_stream(self):
         """ Opens the image file for byte read access. """
