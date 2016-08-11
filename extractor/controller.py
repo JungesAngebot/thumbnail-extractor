@@ -12,6 +12,11 @@ class AnalysisController(object):
     """ Basically starts the analysis process for a specified video"""
 
     @staticmethod
+    def generate_frames(video_filename):
+        """ Just invokes frame creation for the given video. """
+        extract_frames_from_video('%s/static/videos/%s' % (APP_ROOT, video_filename), False)
+
+    @staticmethod
     def analyze_video(no_gen):
         """ Starts the analysis of the given (static) video. """
         video_filename = '%s/static/videos/sample_summer.mp4' % APP_ROOT
