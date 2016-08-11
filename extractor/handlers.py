@@ -27,4 +27,4 @@ def show_index_page():
 def show_thumbnails():
     """ Hook for displaying all thumbnails generated. """
     images = AnalysisController.get_all_generated_thumbnails()
-    return render_template('', images=images, page='overview')
+    return render_template('overview.html', images=images, page='overview')
