@@ -4,9 +4,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <form>
+                <form method="post" action="{{ url_for('frontend.show_index_page') }}">
                     <div class="form-group">
-
+                        <label for="video-selection">Video selection</label>
+                        <select class="form-control" id="video-selection">
+                            {% for video in videos %}
+                                <option value="{{ video.static_url_ref }}">{{ video.static_url_ref }}</option>
+                            {% endfor %}
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Generate Frames</button>
                 </form>
