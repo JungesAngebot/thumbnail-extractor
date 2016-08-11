@@ -5,7 +5,7 @@ from extractor.data import Image
 from extractor.image_analysis import determine_dominant_color_for_images, run_face_detection, \
     determine_dominant_color_for_image, detect_face, determine_color_codes_for_image
 from extractor.rendering import highlight_faces
-from extractor.system_utils import get_all_thumbnails
+from extractor.system_utils import get_all_thumbnails, get_thumbs_only
 from extractor.video_processing import extract_frames_from_video
 
 
@@ -53,4 +53,6 @@ class AnalysisController(object):
     @staticmethod
     def determine_best_thumbnail():
         """ Determines the best thumbnail out of the generated ones. """
-        pass
+        images = get_thumbs_only()
+
+        return None
