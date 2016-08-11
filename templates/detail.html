@@ -3,11 +3,13 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-6">
+                <h3>Original image</h3>
                 <div class="thumbnail">
                     <img src="{{ url_for('static', filename='images/' + image.static_url_ref) }}" width="300">
                 </div>
             </div>
             <div class="col-lg-6">
+                <h3>Image with detection marks</h3>
                 <div class="thumbnail">
                     <img src="{{ url_for('static', filename='images/' + image.rendered_with_face_detection_name) }}"
                          width="300">
@@ -16,10 +18,13 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
-                {% for color in image.color_palette  %}
-                    <div class="box" style="background: rgb({{ color[0] }}, {{ color[1] }}, {{ color[2] }});">
-                    </div>
-                {% endfor %}
+                <div class="panel panel-default">
+                    <h3>Color Codes</h3>
+                    {% for color in image.color_palette %}
+                        <div class="box" style="background: rgb({{ color[0] }}, {{ color[1] }}, {{ color[2] }});">
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
         <div class="row">
