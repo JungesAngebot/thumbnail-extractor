@@ -49,3 +49,8 @@ class AnalysisController(object):
         """ Analyzes the audio track of the given video. """
         extract_audio_from_video(video_filename)
         return get_speed_and_beats_from_audio()
+
+    @staticmethod
+    def determine_best_thumbnail():
+        """ Determines the best thumbnail out of the generated ones. """
+        pass
