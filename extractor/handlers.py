@@ -17,9 +17,12 @@ def show_index_page():
     """
     if is_post_request():
         video_name = request.form['video']
-        audio_analysis = request.form['audio_analysis']
-        frame_analysis = request.form['frame_analysis']
-        print(video_name, audio_analysis, frame_analysis)
+        audio_analysis = bool(request.form['audio_analysis']) if 'audio_analysis' in request.form else False
+        frame_analysis = bool(request.form['frame_analysis']) if 'frame_analysis' in request.form else False
+        if audio_analysis:
+            pass
+        elif frame_analysis:
+            pass
     videos = get_all_videos()
     return render_template('index.html', videos=videos, page='index')
 
