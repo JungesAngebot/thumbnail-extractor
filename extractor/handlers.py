@@ -7,7 +7,7 @@ from extractor.system_utils import clean_env, get_all_videos
 """ Handlers for processing incoming requests. """
 
 
-@frontend.route('/')
+@frontend.route('/', methods=['GET', 'POST'])
 def show_index_page():
     """ Hook to begin video file processing.
 
