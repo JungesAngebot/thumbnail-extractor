@@ -20,4 +20,4 @@ def show_index_page():
         no_gen = False
         clean_env()
     images = AnalysisController.analyze_video(no_gen)
-    return render_template('index.html', images=images)
+    return render_template('index.html', images=images, page='index')

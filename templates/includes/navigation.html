@@ -12,7 +12,7 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="{{ url_for('frontend.show_index_page') }}">Video Processing</a></li>
+        <li {% if page == 'index' %} class="active" {% endif %}><a href="{{ url_for('frontend.show_index_page') }}">Video Processing</a></li>
         <li><a href="#">Thumbnail Overview</a></li>
       </ul>
     </div>
