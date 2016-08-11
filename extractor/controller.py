@@ -24,3 +24,7 @@ class AnalysisController(object):
         """ Controller hook to get all thumbnails prev. generated. """
         return get_all_thumbnails()
 
+    @staticmethod
+    def determine_image_details(image_name):
+        pass
+
