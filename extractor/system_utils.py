@@ -7,11 +7,16 @@ from extractor.data import Video
 """ Commons utils to work with the system. """
 
 
-def clean_env():
+def clean_env(audio=True, images=True):
     """ Cleans the static/images folder. """
-    files = glob.glob('%s/static/images/*' % APP_ROOT)
-    for f in files:
-        os.remove(f)
+    if images:
+        files = glob.glob('%s/static/images/*' % APP_ROOT)
+        for f in files:
+            os.remove(f)
+    if audio:
+        files = glob.glob('%s/static/audios/*' % APP_ROOT)
+        for f in files:
+            os.remove(f)
 
 
 def get_all_thumbnails():

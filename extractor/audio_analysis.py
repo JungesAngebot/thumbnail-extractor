@@ -6,7 +6,7 @@ from extractor import APP_ROOT
 
 def extract_audio_from_video(video_name):
     """ Extracts audio from a video clip. """
-    command = 'ffmpeg -i %s %s/static/audios/out.mp3' % video_name
+    command = 'ffmpeg -i %s %s/static/audios/out.mp3' % (video_name, APP_ROOT)
     os.system(command)
 
 

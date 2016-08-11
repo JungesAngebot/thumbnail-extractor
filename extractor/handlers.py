@@ -1,6 +1,6 @@
 from flask import render_template, request
 
-from extractor import frontend
+from extractor import frontend, APP_ROOT
 from extractor.controller import AnalysisController
 from extractor.request_utils import is_post_request
 from extractor.system_utils import get_all_videos, clean_env
@@ -20,9 +20,11 @@ def show_index_page():
         audio_analysis = bool(request.form['audio_analysis']) if 'audio_analysis' in request.form else False
         frame_analysis = bool(request.form['frame_analysis']) if 'frame_analysis' in request.form else False
         if audio_analysis:
-            pass
+            clean_env(images=False)
+            speed, beats = AnalysisController.analyze_video('%s/static/videos/%s' % (APP_ROOT, video_name))
+            return render_template('video_detail.html', speed=speed, beats=beats, video_name=video_name)
         elif frame_analysis:
-            clean_env()
+            clean_env(audio=False)
             AnalysisController.generate_frames(video_name)
     videos = get_all_videos()
     return render_template('index.html', videos=videos, page='index')
