@@ -46,3 +46,8 @@ def show_single_thumbnail_by_name(image_name):
     """
     image = AnalysisController.determine_image_details(image_name)
     return render_template('detail.html', image=image)
+
+
+@frontend.route('/thumbnails/useful')
+def detect_useful_thumbs():
+    pass
