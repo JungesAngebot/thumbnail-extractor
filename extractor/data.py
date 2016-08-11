@@ -40,6 +40,7 @@ class Image(object):
         """ Sets the face detection results from google vision and
         parses the dictionary containing the results.
         """
+        self.raw_face_detection = result
         if result is not None:
             for landmark in result[0]['landmarks']:
                 self.landmarks.append(Landmark.create_from_dict(landmark))
