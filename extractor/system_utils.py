@@ -18,5 +18,5 @@ def get_all_thumbnails():
     files = glob.glob('%s/static/images/*' % APP_ROOT)
     images = []
     for file in files:
-        images.append(file.replace(APP_ROOT, ''))
+        images.append(file.replace('%s/static/images/' % APP_ROOT, ''))
     return images
