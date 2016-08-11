@@ -3,7 +3,7 @@ from flask import render_template, request
 from extractor import frontend, APP_ROOT
 from extractor.controller import AnalysisController
 from extractor.request_utils import is_post_request
-from extractor.system_utils import get_all_videos, clean_env
+from extractor.system_utils import get_all_videos, clean_env, delete_detected
 
 """ Handlers for processing incoming requests. """
 
@@ -34,6 +34,7 @@ def show_index_page():
 def show_thumbnails():
     """ Hook for displaying all thumbnails generated. """
     images = AnalysisController.get_all_generated_thumbnails()
+    delete_detected()
     return render_template('overview.html', images=images, page='overview')
 
 
