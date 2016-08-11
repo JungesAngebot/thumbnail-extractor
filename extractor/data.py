@@ -1,6 +1,8 @@
 """ Simple module for representing data to be rendered. """
 from PIL import Image as pilimage
 
+from extractor import APP_ROOT
+
 
 class Image(object):
     """ Image model to represent basic information
@@ -82,3 +84,18 @@ class Landmark(object):
                    landmark_dict['position']['x'],
                    landmark_dict['position']['y'],
                    landmark_dict['position']['y'])
+
+
+class Video(object):
+    """ Class to represent a video file. """
+    def __init__(self, filename, static_url_ref):
+        """ Initializer just sets the filename and the original name
+        used to build an url to the video.
+        """
+        self.filename = filename
+        self.static_url_ref = static_url_ref
+
+    @classmethod
+    def create_from_filename(cls, filename):
+        """ Creates a video instance out of a filename. """
+        return cls(filename, filename.replace('%s/static/videos/' % APP_ROOT))
