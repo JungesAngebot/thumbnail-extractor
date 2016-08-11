@@ -14,10 +14,10 @@ def highlight_faces(image, faces, output_filename):
     """
     im = Image.open(image)
     draw = ImageDraw.Draw(im)
-
-    for face in faces:
-        box = [(v.get('x', 0.0), v.get('y', 0.0)) for v in face['fdBoundingPoly']['vertices']]
-        draw.line(box + [box[0]], width=5, fill='#00ff00')
+    if faces is not None:
+        for face in faces:
+            box = [(v.get('x', 0.0), v.get('y', 0.0)) for v in face['fdBoundingPoly']['vertices']]
+            draw.line(box + [box[0]], width=5, fill='#00ff00')
 
     del draw
     im.save(output_filename)
