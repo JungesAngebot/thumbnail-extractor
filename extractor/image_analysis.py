@@ -15,6 +15,11 @@ Analysis:
 DISCOVERY_URL = 'https://{api}.googleapis.com/$discovery/rest?version={apiVersion}'
 
 
+def determine_dominant_color_for_image(image):
+    """ Determines the dominant color of a single image. """
+    pass
+
+
 def determine_dominant_color_for_images(images):
     """ Detects the dominant color for each given image.
 
