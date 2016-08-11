@@ -15,6 +15,16 @@ Analysis:
 DISCOVERY_URL = 'https://{api}.googleapis.com/$discovery/rest?version={apiVersion}'
 
 
+def determine_color_codes_for_image(image):
+    """ Gets the most prominent colors in the image. """
+    color_thief = ColorThief(image.image_name)
+    try:
+        return color_thief.get_palette()
+    except:
+        pass
+    return []
+
+
 def determine_dominant_color_for_image(image):
     """ Determines the dominant color of a single image. """
     color_thief = ColorThief(image.image_name)
