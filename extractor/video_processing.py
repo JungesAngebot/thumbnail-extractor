@@ -29,7 +29,7 @@ def build_ffmpeg_command_to_extract_frame(second, video_filename, counter):
     return command_template % (video_filename, second, APP_ROOT, counter)
 
 
-def extract_frames_from_video(video_filename):
+def extract_frames_from_video(video_filename, no_gen):
     """ Extracts frames from the fiven video.
 
     Only takes the first minute of the video to extract frames from it. Frame
@@ -43,7 +43,8 @@ def extract_frames_from_video(video_filename):
     second = 0
     video_duration = get_duration_of_video(video_filename)
     for i in range(video_duration):
-        os.system(build_ffmpeg_command_to_extract_frame(second, video_filename, i))
+        if not no_gen:
+            os.system(build_ffmpeg_command_to_extract_frame(second, video_filename, i))
         second += 20
         if second >= video_duration or second >= 60:
             break

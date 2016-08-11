@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, request
 
 from extractor import frontend
 from extractor.controller import AnalysisController
@@ -15,6 +15,9 @@ def show_index_page():
     First of all the static/images/ folder is cleaned, what means that all images in their
     will be removed.
     """
-    clean_env()
-    images = AnalysisController.analyze_video()
+    no_gen = True
+    if 'nogen' not in request.args:
+        no_gen = False
+        clean_env()
+    images = AnalysisController.analyze_video(no_gen)
     return render_template('index.html', images=images)
