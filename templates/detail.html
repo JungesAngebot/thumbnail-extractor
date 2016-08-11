@@ -2,12 +2,15 @@
 {% block content %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-2">
+            <div class="col-lg-12">
                 <div class="thumbnail">
                     <img src="{{ url_for('static', filename='images/' + image.static_url_ref) }}" width="300">
                 </div>
             </div>
-            <div class="col-lg-3">
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <h2>Basic Image Information</h2>
                 <div class="list-group">
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">Image Size</h4>
@@ -22,9 +25,16 @@
                             <strong>Mode of the image is:</strong> {{ image.image_mode }}
                         </p>
                     </a>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">Dominant Color</h4>
+                        <p class="list-group-item-text">
+                            <strong>Dominant color in image is:</strong> {{ image.dominant_color }}
+                        </p>
+                    </a>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-4">
+                <h2>Landmark Face Detection Results</h2>
                 <div class="list-group">
                     {% for landmark in image.landmarks %}
                         <a href="#" class="list-group-item">
@@ -38,7 +48,8 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-4">
+                <h2>Likelihood Detection</h2>
                 <div class="list-group">
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">Likelihoods</h4>
