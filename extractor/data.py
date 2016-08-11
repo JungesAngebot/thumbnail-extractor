@@ -24,6 +24,7 @@ class Image(object):
         self.image_width = None
         self.image_height = None
         self.image_mode = None
+        self.raw_face_detection = None
         self._determine_basic_image_attribs()
 
     def _determine_basic_image_attribs(self):
