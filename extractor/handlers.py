@@ -26,4 +26,5 @@ def show_index_page():
 @frontend.route('/thumbnails')
 def show_thumbnails():
     """ Hook for displaying all thumbnails generated. """
-    pass
+    images = AnalysisController.get_all_generated_thumbnails()
+    return render_template('', images=images, page='overview')
