@@ -3,7 +3,7 @@ from flask import render_template, request
 from extractor import frontend
 from extractor.controller import AnalysisController
 from extractor.request_utils import is_post_request
-from extractor.system_utils import get_all_videos
+from extractor.system_utils import get_all_videos, clean_env
 
 """ Handlers for processing incoming requests. """
 
@@ -22,6 +22,7 @@ def show_index_page():
         if audio_analysis:
             pass
         elif frame_analysis:
+            clean_env()
             AnalysisController.generate_frames(video_name)
     videos = get_all_videos()
     return render_template('index.html', videos=videos, page='index')
