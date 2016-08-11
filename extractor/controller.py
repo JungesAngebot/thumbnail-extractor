@@ -6,6 +6,7 @@ from extractor.image_analysis import determine_dominant_color_for_images, run_fa
     determine_dominant_color_for_image, detect_face, determine_color_codes_for_image
 from extractor.rendering import highlight_faces
 from extractor.system_utils import get_all_thumbnails, get_thumbs_only
+from extractor.thumbnail_rating import determine_best
 from extractor.video_processing import extract_frames_from_video
 
 
@@ -56,4 +57,4 @@ class AnalysisController(object):
         images = get_thumbs_only()
         run_face_detection(images)
         determine_dominant_color_for_images(images)
-        return None
+        return determine_best(images)
