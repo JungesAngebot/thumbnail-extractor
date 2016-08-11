@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, request
 
 from extractor import frontend
 from extractor.controller import AnalysisController
@@ -16,7 +16,10 @@ def show_index_page():
     will be removed.
     """
     if is_post_request():
-        pass
+        video_name = request.form['video']
+        audio_analysis = request.form['audio_analysis']
+        frame_analysis = request.form['frame_analysis']
+        print(video_name, audio_analysis, frame_analysis)
     videos = get_all_videos()
     return render_template('index.html', videos=videos, page='index')
 
