@@ -1,4 +1,5 @@
 """ Simple module for representing data to be rendered. """
+from PIL import Image as pilimage
 
 
 class Image(object):
@@ -20,9 +21,13 @@ class Image(object):
         self.image_name = image_name
         self.static_url_ref = static_url_ref
         self.landmarks = []
+        self.image_width = None
+        self.image_height = None
+        self._determine_basic_image_attribs()
 
     def _determine_basic_image_attribs(self):
-        pass
+        with pilimage.open(self.image_name) as img:
+            self.image_width, self.image_height = img.size
 
     def image_stream(self):
         """ Opens the image file for byte read access. """
