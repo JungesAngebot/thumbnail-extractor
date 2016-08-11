@@ -1,10 +1,9 @@
-
-
 """ Basic controller layer for hooking up the analyzis functionality. """
 from extractor import APP_ROOT
 from extractor.data import Image
 from extractor.image_analysis import determine_dominant_color_for_images, run_face_detection, \
     determine_dominant_color_for_image, detect_face
+from extractor.rendering import highlight_faces
 from extractor.system_utils import get_all_thumbnails
 from extractor.video_processing import extract_frames_from_video
 
@@ -33,5 +32,6 @@ class AnalysisController(object):
         image.dominant_color = determine_dominant_color_for_image(image)
         result = detect_face(image.image_stream())
         image.set_face_detection_result(result)
+        highlight_faces(image.image_name, image.raw_face_detection,
+                        '%s/static/images/detection_%s' % (APP_ROOT, image_name))
         return image
-
