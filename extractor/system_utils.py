@@ -2,7 +2,7 @@ import glob
 import os
 
 from extractor import APP_ROOT
-from extractor.data import Video
+from extractor.data import Video, Image
 
 """ Commons utils to work with the system. """
 
@@ -12,6 +12,15 @@ def delete_detected():
     files = glob.glob('%s/static/images/detection*' % APP_ROOT)
     for file in files:
         os.remove(file)
+
+
+def get_thumbs_only():
+    """ This function only returns the generated thumbnails. """
+    files = glob.glob('%s/static/images/out*' % APP_ROOT)
+    images = []
+    for file in files:
+        images.append(Image.create_with_image_name(file, file.replace('%s/static/images/' % APP_ROOT, '')))
+    return images
 
 
 def clean_env(audio=True, images=True):
