@@ -9,7 +9,7 @@ from extractor.data import Video
 
 def delete_detected():
     """ Deletes images that are generated with face detection marks. """
-    files = glob.glob('%s/static/images/detected*' % APP_ROOT)
+    files = glob.glob('%s/static/images/detection*' % APP_ROOT)
     for file in files:
         os.remove(file)
 
