@@ -36,4 +36,5 @@ def show_single_thumbnail_by_name(image_name):
 
     The thumbnail and all detail information will be shown on a single page.
     """
-    return render_template('detail.html')
+    image = AnalysisController.determine_image_details(image_name)
+    return render_template('detail.html', image=image)
