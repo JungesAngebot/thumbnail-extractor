@@ -2,6 +2,7 @@ from flask import render_template
 
 from extractor import frontend
 from extractor.controller import AnalysisController
+from extractor.request_utils import is_post_request
 from extractor.system_utils import get_all_videos
 
 """ Handlers for processing incoming requests. """
@@ -14,6 +15,8 @@ def show_index_page():
     First of all the static/images/ folder is cleaned, what means that all images in their
     will be removed.
     """
+    if is_post_request():
+        pass
     videos = get_all_videos()
     return render_template('index.html', videos=videos, page='index')
 
