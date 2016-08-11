@@ -31,5 +31,5 @@ class AnalysisController(object):
         """ Analysis the given image and returns an image object with all information. """
         image = Image.create_with_image_name('%s/static/images/%s' % (APP_ROOT, image_name), image_name)
         image.dominant_color = determine_dominant_color_for_image(image)
-        pass
+        return image
 
