@@ -47,7 +47,10 @@
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">Dominant Color</h4>
                         <p class="list-group-item-text">
-                            <strong>Dominant color in image is:</strong> {{ image.dominant_color }}
+                        <strong>Dominant color in image is:</strong> {{ image.dominant_color }}
+                        <div class="box" style="background: rgb({{ image.dominant_color[0] }}, {{ image.dominant_color[1] }}, {{ image.dominant_color[2] }});">
+
+                        </div>
                         </p>
                     </a>
                 </div>
