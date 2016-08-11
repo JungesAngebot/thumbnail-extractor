@@ -1,8 +1,8 @@
-from flask import render_template, request
+from flask import render_template
 
 from extractor import frontend
 from extractor.controller import AnalysisController
-from extractor.system_utils import clean_env, get_all_videos
+from extractor.system_utils import get_all_videos
 
 """ Handlers for processing incoming requests. """
 
