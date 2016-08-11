@@ -26,5 +26,6 @@ class AnalysisController(object):
 
     @staticmethod
     def determine_image_details(image_name):
+        """ Analysis the given image and returns an image object with all information. """
         pass
 
