@@ -54,5 +54,6 @@ class AnalysisController(object):
     def determine_best_thumbnail():
         """ Determines the best thumbnail out of the generated ones. """
         images = get_thumbs_only()
-
+        run_face_detection(images)
+        determine_dominant_color_for_images(images)
         return None
