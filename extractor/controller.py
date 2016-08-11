@@ -2,6 +2,7 @@
 
 """ Basic controller layer for hooking up the analyzis functionality. """
 from extractor import APP_ROOT
+from extractor.data import Image
 from extractor.image_analysis import determine_dominant_color_for_images, run_face_detection
 from extractor.system_utils import get_all_thumbnails
 from extractor.video_processing import extract_frames_from_video
@@ -27,5 +28,6 @@ class AnalysisController(object):
     @staticmethod
     def determine_image_details(image_name):
         """ Analysis the given image and returns an image object with all information. """
+        image = Image.create_with_image_name('%s/static/images/%s' % (APP_ROOT, image_name), image_name)
         pass
 
