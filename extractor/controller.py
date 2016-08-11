@@ -1,5 +1,6 @@
 """ Basic controller layer for hooking up the analyzis functionality. """
 from extractor import APP_ROOT
+from extractor.audio_analysis import get_speed_and_beats_from_audio, extract_audio_from_video
 from extractor.data import Image
 from extractor.image_analysis import determine_dominant_color_for_images, run_face_detection, \
     determine_dominant_color_for_image, detect_face, determine_color_codes_for_image
@@ -42,3 +43,9 @@ class AnalysisController(object):
         image.rendered_with_face_detection_name = 'detection_%s' % image_name
         image.color_palette = determine_color_codes_for_image(image)
         return image
+
+    @staticmethod
+    def analyze_video(video_filename):
+        """ Analyzes the audio track of the given video. """
+        extract_audio_from_video(video_filename)
+        return get_speed_and_beats_from_audio()
