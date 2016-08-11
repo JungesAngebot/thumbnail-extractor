@@ -50,4 +50,4 @@ def show_single_thumbnail_by_name(image_name):
 
 @frontend.route('/thumbnails/useful')
 def detect_useful_thumbs():
-    pass
+    return render_template('useful_thumbs.html', page='useful-thumbs')
