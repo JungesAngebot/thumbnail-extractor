@@ -22,7 +22,7 @@ def show_index_page():
         if audio_analysis:
             pass
         elif frame_analysis:
-            pass
+            AnalysisController.generate_frames(video_name)
     videos = get_all_videos()
     return render_template('index.html', videos=videos, page='index')
 
