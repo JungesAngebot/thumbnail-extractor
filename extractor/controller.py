@@ -2,7 +2,7 @@
 from extractor import APP_ROOT
 from extractor.data import Image
 from extractor.image_analysis import determine_dominant_color_for_images, run_face_detection, \
-    determine_dominant_color_for_image, detect_face
+    determine_dominant_color_for_image, detect_face, determine_color_codes_for_image
 from extractor.rendering import highlight_faces
 from extractor.system_utils import get_all_thumbnails
 from extractor.video_processing import extract_frames_from_video
@@ -35,4 +35,5 @@ class AnalysisController(object):
         highlight_faces(image.image_name, image.raw_face_detection,
                         '%s/static/images/detection_%s' % (APP_ROOT, image_name))
         image.rendered_with_face_detection_name = 'detection_%s' % image_name
+        image.color_palette = determine_color_codes_for_image(image)
         return image
