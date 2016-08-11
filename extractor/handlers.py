@@ -21,3 +21,8 @@ def show_index_page():
         clean_env()
     images = AnalysisController.analyze_video(no_gen)
     return render_template('index.html', images=images, page='index')
+
+
+@frontend.route('/thumbnails')
+def show_thumbnails():
+    pass
