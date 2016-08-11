@@ -13,7 +13,7 @@ def determine_best(images):
 
 
 def has_image_faces(image):
-    pass
+    return image.landmarks is not None
 
 
 def has_image_joy_likelihook(image):
