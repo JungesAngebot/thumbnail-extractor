@@ -17,7 +17,12 @@ DISCOVERY_URL = 'https://{api}.googleapis.com/$discovery/rest?version={apiVersio
 
 def determine_dominant_color_for_image(image):
     """ Determines the dominant color of a single image. """
-    pass
+    color_thief = ColorThief(image.image_name)
+    try:
+        return color_thief.get_color(quality=1)
+    except:
+        pass
+    return 'nocolor'
 
 
 def determine_dominant_color_for_images(images):
@@ -29,13 +34,7 @@ def determine_dominant_color_for_images(images):
     :return: nothing (call by reference)
     """
     for image in images:
-        color_thief = ColorThief(image.image_name)
-        dominant_color = 'nocolor'
-        try:
-            dominant_color = color_thief.get_color(quality=1)
-        except:
-            pass
-        image.dominant_color = dominant_color
+        image.dominant_color = determine_dominant_color_for_image(image)
 
 
 def get_vision_service():
