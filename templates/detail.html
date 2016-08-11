@@ -9,8 +9,14 @@
             </div>
             <div class="col-lg-6">
                 <div class="thumbnail">
-                    <img src="{{ url_for('static', filename='images/' + image.rendered_with_face_detection_name) }}" width="300">
+                    <img src="{{ url_for('static', filename='images/' + image.rendered_with_face_detection_name) }}"
+                         width="300">
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                {{ image.color_palette }}
             </div>
         </div>
         <div class="row">
@@ -60,11 +66,11 @@
                         <h4 class="list-group-item-heading">Likelihoods</h4>
                         <p class="list-group-item-text">
                             <strong>Under Exposed:</strong> {{ image.under_exposed_likelihood }} <br>
-                            <strong>Anger:</strong> {{ image.anger_likelihood}} <br>
-                            <strong>Blurred:</strong> {{ image.blurred_likelihood}} <br>
-                            <strong>Sorrow:</strong> {{ image.sorrow_likelihood}} <br>
-                            <strong>Joy:</strong> {{ image.joy_likelihood}} <br>
-                            <strong>Surprise:</strong> {{ image.surprise_likelihood}} <br>
+                            <strong>Anger:</strong> {{ image.anger_likelihood }} <br>
+                            <strong>Blurred:</strong> {{ image.blurred_likelihood }} <br>
+                            <strong>Sorrow:</strong> {{ image.sorrow_likelihood }} <br>
+                            <strong>Joy:</strong> {{ image.joy_likelihood }} <br>
+                            <strong>Surprise:</strong> {{ image.surprise_likelihood }} <br>
                         </p>
                     </a>
                 </div>
