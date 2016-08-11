@@ -3,6 +3,7 @@
 """ Basic controller layer for hooking up the analyzis functionality. """
 from extractor import APP_ROOT
 from extractor.image_analysis import determine_dominant_color_for_images, run_face_detection
+from extractor.system_utils import get_all_thumbnails
 from extractor.video_processing import extract_frames_from_video
 
 
@@ -17,4 +18,9 @@ class AnalysisController(object):
         determine_dominant_color_for_images(images)
         run_face_detection(images)
         return images
+
+    @staticmethod
+    def get_all_generated_thumbnails():
+        """ Controller hook to get all thumbnails prev. generated. """
+        return get_all_thumbnails()
 
