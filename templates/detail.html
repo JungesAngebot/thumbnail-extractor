@@ -7,7 +7,7 @@
                     <img src="{{ url_for('static', filename='images/' + image.static_url_ref) }}" width="300">
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="list-group">
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">Image Size</h4>
@@ -24,7 +24,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="list-group">
                     {% for landmark in image.landmarks %}
                         <a href="#" class="list-group-item">
@@ -36,6 +36,21 @@
                             </p>
                         </a>
                     {% endfor %}
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">Likelihoods</h4>
+                        <p class="list-group-item-text">
+                            <strong>Under Exposed:</strong> {{ image.under_exposed_likelihood }} <br>
+                            <strong>Anger:</strong> {{ image.anger_likelihood}} <br>
+                            <strong>Blurred:</strong> {{ image.blurred_likelihood}} <br>
+                            <strong>Sorrow:</strong> {{ image.sorrow_likelihood}} <br>
+                            <strong>Joy:</strong> {{ image.joy_likelihood}} <br>
+                            <strong>Surprise:</strong> {{ image.surprise_likelihood}} <br>
+                        </p>
+                    </a>
                 </div>
             </div>
         </div>
