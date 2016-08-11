@@ -34,4 +34,5 @@ class AnalysisController(object):
         image.set_face_detection_result(result)
         highlight_faces(image.image_name, image.raw_face_detection,
                         '%s/static/images/detection_%s' % (APP_ROOT, image_name))
+        image.rendered_with_face_detection_name = 'detection_%s' % image_name
         return image
